@@ -17,6 +17,9 @@ elif sys.version_info[1] < 2:
 if sys.version_info[0] < 3 or sys.version_info[1] < 4:
     install_requires += ['enum34']
 
+if sys.version_info[0] == 2 and sys.version_info[1] < 7:
+    install_requires += ['ordereddict']
+
 try:
    import pypandoc
    readme = pypandoc.convert('README.md', 'rst')
